@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="AntiScam">
+    <meta name="og:description" content="AntiScam">
+    <meta name="og:keywords" content="AntiScam">
+    <title>AntiScam</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">
+                <div class="app-logo"></div>
+                <a class="app-title" href="{{ url_for('index') }}">AntiScam</a>
+            </div>
+            <ul class="app-menu">
+
+                <!--                <li class="menu-item"><a href="{{ url_for('plagin') }}">Plagin</a></li>-->
+                <li class="menu-item"><a href="">Statistika</a></li>
+                <li class="menu-item"><a href="">Fikrlar</a></li>
+                <li class="menu-item"><a href="{{ url_for('about') }}">Biz haqimizda</a></li>
+            </ul>
+        </div>
+        <div class="scan-result active">
+            <div class="status-icon">
+                <tgs-player autoplay loop mode="normal" src="static/scaner.tgs" class="scan-icon active"></tgs-player>
+                <tgs-player autoplay loop mode="normal" src="static/success.tgs" class="warning-icon"></tgs-player>
+                <tgs-player autoplay loop mode="normal" src="static/warning.tgs" class="success-icon"></tgs-player>
+            </div>
+            <div class="status-title" id="prediction">Veb-saytni tekshirish</div>
+            <div class="status-description">Saytni xavfsizligini tekshirib ko'rish...</div>
+        </div>
+        <div class="ffs-url">
+            <form action="/" method="post" class="scan-form">
+                <input type="text" class="form__input" name='url' id="url" required=""
+                    placeholder="https://www.example.com">
+                <button role="button">TEKSHIRISH</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
+
+
+
+    <script>
+
+        var scanIcon = document.querySelector('.scan-icon'),
+            successIcon = document.querySelector('.success-icon'),
+            warningIcon = document.querySelector('.warning-icon'),
+            statusForm = document.querySelector('.ffs-url');
+
+        let x = '{{xx}}';
+        let num = x * 100;
+        if (0 <= x && x < 0.50) {
+            num = 100 - num;
+        }
+        let txtx = num.toString();
+        if (x <= 1 && x >= 0.50) {
+            scanIcon.classList.remove('active');
+            warningIcon.classList.remove('active');
+            successIcon.classList.add('active');
+            statusForm.classList.add('warning');
+            statusForm.classList.remove('success');
+            var label = "Saytdan foydalanish " + txtx + "% xavfli!"
+            document.getElementById("prediction").innerHTML = label;
+            document.getElementById("button1").style.display = "block";
+
+        }
+        else if (0 <= x && x < 0.50) {
+            scanIcon.classList.remove('active');
+            successIcon.classList.remove('active');
+            warningIcon.classList.add('active');
+            statusForm.classList.remove('warning');
+            statusForm.classList.add('success');
+            var label = "Saytdan foydalanish " + txtx + "% xavfsiz.";
+            document.getElementById("prediction").innerHTML = label;
+            document.getElementById("button2").style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>

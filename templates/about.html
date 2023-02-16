@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="AntiScam">
+    <meta name="og:description" content="AntiScam">
+    <meta name="og:keywords" content="AntiScam">
+    <title>AntiScam</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="about-page">
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">
+                <div class="app-logo"></div>
+                <a class="app-title" href="{{ url_for('index') }}">AntiScam </a>
+            </div>
+            <ul class="app-menu">
+<!--                <li class="menu-item"><a href="">Plagin</a></li>-->
+                <li class="menu-item"><a href="">Statistika</a></li>
+                <li class="menu-item"><a href="">Fikirlar</a></li>
+                <li class="menu-item"><a href="{{ url_for('about') }}">Biz haqimizda</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="about-icon">
+                <tgs-player autoplay loop mode="normal" src="static/about.tgs" class="scan-icon active"></tgs-player>
+            </div>
+            <div class="about">
+                <div class="about-title">Biz haqimizda</div>
+                <p>
+Bizning platformamiz veb saytni skanerlaydi va zararli yoki firibgar havolalarni aniqlasa, dastur uni darhol bloklaydi. Platforma tufayli foydalanuvchi zararli xizmatlarga tushib qolmaydi.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="AntiScam">
+    <meta name="og:description" content="AntiScam">
+    <meta name="og:keywords" content="AntiScam">
+    <title>AntiScam</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body class="about-page">
+    <div class="container">
+        <div class="header">
+            <div class="logo-title">
+                <div class="app-logo"></div>
+                <a class="app-title" href="{{ url_for('index') }}">AntiScam </a>
+            </div>
+            <ul class="app-menu">
+<!--                <li class="menu-item"><a href="">Plagin</a></li>-->
+                <li class="menu-item"><a href="">Statistika</a></li>
+                <li class="menu-item"><a href="">Fikirlar</a></li>
+                <li class="menu-item"><a href="{{ url_for('about') }}">Biz haqimizda</a></li>
+            </ul>
+        </div>
+        <div class="apps">
+            <div class="device-icon"></div>
+            <div class="device-name"></div>
+            <div class="device-description"></div>
+            <a class="download-btn" href="/">Download for Device</a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/tgs-player.js"></script>
+    <script>
+        function fnBrowserDetect(){
+
+            let userAgent = navigator.userAgent;
+            let browserName;
+
+            if(userAgent.match(/chrome|chromium|crios/i)){
+                browserName = "chrome";
+            }else if(userAgent.match(/firefox|fxios/i)){
+                browserName = "firefox";
+            }  else if(userAgent.match(/safari/i)){
+                browserName = "safari";
+            }else if(userAgent.match(/opr\//i)){
+                browserName = "opera";
+            } else if(userAgent.match(/edg/i)){
+                browserName = "edge";
+            }else{
+                browserName="No browser detection";
+            }
+
+            console.log(browserName);
+        }
+        fnBrowserDetect()
+    </script>
+</body>
+</html>

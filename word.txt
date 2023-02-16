@@ -1,0 +1,32 @@
+All services used for analysis
+
+      1.  | UsingIp
+      2.  | longUrl
+      3.  | shortUrl
+      4.  | Symbol #@
+      5.  | Redirecting #//
+      6.  | prefixSuffix
+      7.  | SubDomains
+      8.  | HTTPS
+      9.  | DomainRegLen
+      10. | Favicon
+      11. | NonStdPort
+      12. | HTTPSDomainURL
+      13. | RequestURL
+      14. | AnchorURL
+      15. | LinksInScriptTags
+      16. | ServerFormHandler
+      17. | InfoEmail
+      18. | AbnormalURL
+      19. | WebsiteForwarding
+      20. | StatusBarCust
+      21. | DisableRightClick
+      22. | UsingPopupWindow
+      23. | IframeRedirection
+      24. | AgeofDomain
+      25. | DNSRecording    
+      26. | WebsiteTraffic   
+      27. | PageRank
+      28. | GoogleIndex
+      29. | LinksPointingToPage
+      30. | StatsReport
